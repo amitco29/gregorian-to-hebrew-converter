@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gregorian to Hebrew Date Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styling.css') }}">
+</head>
+<body>
+
+<div class="card">
+    <h1>Gregorian to Hebrew Converter</h1>
+
+    <form id="converter-form">
+        <div class="form-group">
+            <label for="date-input">Select Desired Date:</label>
+            <input type="date" id="date-input" required>
+        </div>
+
+        <div class="checkbox-section">
+            <div class="checkbox-group">
+                <input type="checkbox" id="sunset-checkbox">
+                <label for="sunset-checkbox" class="checkbox-label">After sunset</label>
+            </div>
+            <p class="helper-text">On the Hebrew calendar, a new day begins at sunset.</p>
+        </div>
+
+        <button type="submit" id="convert-btn">Convert</button>
+    </form>
+
+    <div id="result-box" class="result-box hidden">
+        <div class="meta" id="gregorian-display"></div>
+        <div class="hebrew-date" id="hebrew-display"></div>
+    </div>
+
+    <div id="error-box" class="error-box hidden"></div>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
